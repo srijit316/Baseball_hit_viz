@@ -209,24 +209,12 @@ if uploaded_files:
     walks = (batter_all["KorBB"] == "Walk").sum()
     strikeouts = (batter_all["KorBB"] == "Strikeout").sum()
 
-    # Plate Appearances: total rows (or refine if needed)
-    plate_appearances = len(batter_all)
-
-    # At-bats = PAs - walks
-    at_bats = plate_appearances - walks
-
-    # Batting average & OBP
-    batting_avg = hits / at_bats if at_bats else 0
-    obp = (hits + walks) / plate_appearances if plate_appearances else 0
-
 
     # Summary DataFrame
     summary_df = pd.DataFrame([{
         "Hits": hits,
         "Walks": walks,
-        "Strikeouts": strikeouts,
-        "BA": round(batting_avg, 3),
-        "OBP": round(obp, 3)
+        "Strikeouts": strikeouts
     }])
 
     st.dataframe(summary_df, use_container_width=True)
