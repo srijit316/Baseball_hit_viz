@@ -5,11 +5,28 @@ import plotly.express as px
 import plotly.graph_objects as go
 import math
 
-# Title
-st.title("⚾ Baseball Hit Visualization")
+# # Title
+st.title("⚾ CatsStats Baseball Hit Visualization")
+# Manual theme toggle
+# theme = st.radio("Theme", ["light", "dark"], horizontal=True)
+# if theme == "dark":
+#     logo_path = "pfp.png"  # White logo for dark mode
+# else:
+#     logo_path = "Cats-Stats-logo-black.svg"  # Black logo for light mode
+
+# # Logo and title in one row
+# col1, col2 = st.columns([1, 8])
+# with col1:
+#     st.image(logo_path, width=60)
+# with col2:
+#     st.markdown("""
+#         <div style="display: flex; align-items: center; height: 60px;">
+#             <h1 style="margin: 0 0 0 10px; font-size: 2.8rem;">Baseball Hit Visualization</h1>
+#         </div>
+#         """, unsafe_allow_html=True)
 
 # Upload file(s)
-uploaded_files = st.file_uploader("Upload Trackman Excel File(s)", type=["csv"], accept_multiple_files=True)
+uploaded_files = st.file_uploader("Upload Trackman CSV File(s)", type=["csv"], accept_multiple_files=True)
 if uploaded_files:
     # Read and concatenate all uploaded CSVs
     df_list = [pd.read_csv(f) for f in uploaded_files]
