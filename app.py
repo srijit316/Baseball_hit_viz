@@ -6,7 +6,7 @@ import plotly.graph_objects as go
 import math
 
 # # Title
-st.title("⚾ CatsStats Baseball Hit Visualization")
+st.title("⚾ 'Cats Stats Baseball Hit Visualization")
 # Manual theme toggle
 # theme = st.radio("Theme", ["light", "dark"], horizontal=True)
 # if theme == "dark":
