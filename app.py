@@ -218,7 +218,7 @@ if uploaded_files:
     }])
 
     st.dataframe(summary_df, use_container_width=True)
-    st.caption("🎯 Goals: HardHitPct > 45%, BA > .300, OBP > .375")
+    st.caption("🎯 Goals: TBD")
 
 
 
