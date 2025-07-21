@@ -75,7 +75,7 @@ if uploaded_files:
             fig.add_trace(go.Scatter(
                 x=[0, fx], y=[0, fy],
                 mode='lines',
-                line=dict(color='black', width=1),
+                line=dict(color='red', width=1),
                 showlegend=False
             ))
 
@@ -100,7 +100,7 @@ if uploaded_files:
         fig.add_trace(go.Scatter(
             x=of_x, y=of_y,
             mode='lines',
-            line=dict(color='black', width=2),
+            line=dict(color='red', width=2),
             name='Outfield Fence'
         ))
 
@@ -114,7 +114,7 @@ if uploaded_files:
         fig.add_trace(go.Scatter(
             x=gi_x, y=gi_y,
             mode='lines',
-            line=dict(color='black', width=1, dash='dot'),
+            line=dict(color='green', width=1, dash='dot'),
             name='Grass Line'
         ))
 
@@ -132,7 +132,7 @@ if uploaded_files:
         fig.add_trace(go.Scatter(
             x=dx, y=dy,
             mode='lines',
-            line=dict(color='black', width=1),
+            line=dict(color='red', width=1),
             showlegend=False
         ))
 
@@ -210,6 +210,7 @@ if uploaded_files:
     strikeouts = (batter_all["KorBB"] == "Strikeout").sum()
 
 
+
     # Summary DataFrame
     summary_df = pd.DataFrame([{
         "Hits": hits,
@@ -218,7 +219,7 @@ if uploaded_files:
     }])
 
     st.dataframe(summary_df, use_container_width=True)
-    st.caption("🎯 Goals: TBD")
+    st.caption("🎯 Goals: HardHitPct > 45%, BA > .300, OBP > .375")
 
 
 
